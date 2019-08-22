@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>{{ title }}</h1>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>場所名稱</th>
+            <th>場所地址</th>
+            <th>場所用途</th>
+            <th class="white-space-no-wrap">最近檢查日期</th>
+            <th>大隊</th>
+            <th>列管單位</th>
+            <th>經度</th>
+            <th>緯度</th>
+            <th>檢查結果</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of result; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{item.SBMNAME}}</td>
+            <td>{{item.SBMXADDR}}</td>
+            <td class="white-space-no-wrap">{{item.S104NAME}}</td>
+            <td>{{item.LASTCDATE | date: 'yyyy-MM-dd' }}</td>
+            <td class="white-space-no-wrap">{{item.S101NAME}}</td>
+            <td class="white-space-no-wrap">{{item.S103NAME}}</td>
+            <td>{{item.WGS84_X}}</td>
+            <td>{{item.WGS84_Y}}</td>
+            <td>{{item.RESULT}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<router-outlet></router-outlet>
